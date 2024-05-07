@@ -2,11 +2,10 @@
 def individual_serial_student(student) -> dict:
     return{
         "name": student["name"],
-        "username": student["username"],
         "dob": student["dob"],
         "email": student["email"],
-        "password": student["password"],
-        "department_id": str(student["department_id"])
+        "course": student["course"]
+        
     }
 
 def list_serial_student(Student_info) -> list:
@@ -16,15 +15,14 @@ def list_serial_student(Student_info) -> list:
 
 
 
-def individual_serial_user(user) -> dict:
-    return{
+def serialize_user(user) -> dict:
+    return {
         "username": user["username"],
         "password": user["password"]
     }
 
-def list_serial_user(user_info) -> list:
-    return[individual_serial_user(user) for user in user_info]
-
+def serialize_users(users) -> list:
+    return [serialize_user(user) for user in users]
 
 def individual_serial_module(module) -> dict:
     return{
@@ -63,6 +61,7 @@ def individual_serial_assessment(assessment) -> dict:
     return{
         "title": assessment["title"],
         "description": assessment["description"],
+        "UploadFile": assessment["UploadFile"],
         "deadline": str(assessment["deadline"]),
         "status": assessment["status"],
         "module_id": str(assessment["module_id"])

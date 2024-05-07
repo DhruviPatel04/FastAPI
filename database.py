@@ -10,6 +10,8 @@ collection_name = db["student_collection"]
 
 cmodule = db["module_collection"]
 
+login_collection = db["login_collection"]
+
 cmaterial = db["material_collection"]
 
 cassessment = db["assessment_collection"]
